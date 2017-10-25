@@ -24,8 +24,10 @@
 <body>
     Hola Rodrigo
     <span id="myLink">Load Pap</span>
-
-    <script>
+     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
             console.log("window.open works well");
@@ -34,9 +36,9 @@
             var myCallback = function(event) { alert(event.url); }
             ref.addEventListener('loadstart', myCallback);
             ref.removeEventListener('loadstart', myCallback);
+            ref.show();
+
         }
-        var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
-        ref.show();
     </script>
 </body>
 
