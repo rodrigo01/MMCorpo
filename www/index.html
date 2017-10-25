@@ -23,16 +23,11 @@
 
 <body>
     Hola Rodrigo
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-        app.initialize();
-        document.addEventListener("deviceready", onDeviceReady, false);
-        function onDeviceReady() {
-            window.open = cordova.InAppBrowser.open;
-
-            window.open('http://www.tecsolutionsmx.com/mmcorpo/', '_blank', 'location=no,toolbar=no');
-        }
+    document.addEventListener('deviceready', function() {
+        var url = 'https://www.google.com' // change to whatever you want
+        cordova.InAppBrowser.open(url, '_self', 'location=no');
+    }, false)
     </script>
 </body>
 
