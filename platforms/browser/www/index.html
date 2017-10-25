@@ -27,15 +27,12 @@
 
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
-
-        function onDeviceReady()
-        {
-            var myLink = document.getElementById('myLink');
-
-            myLink.addEventListener("click", function()
-            {
-                cordova.InAppBrowser.open('http://www.google.com', '_self', 'location=no');
-            })
+        function onDeviceReady() {
+            console.log("window.open works well");
+            var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+            var myCallback = function(event) { alert(event.url); }
+            ref.addEventListener('loadstart', myCallback);
+            ref.removeEventListener('loadstart', myCallback);
         }
     </script>
 </body>
