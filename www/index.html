@@ -23,11 +23,20 @@
 
 <body>
     Hola Rodrigo
-    <script type="text/javascript">
-    document.addEventListener('deviceready', function() {
-        var url = 'https://www.google.com' // change to whatever you want
-        cordova.InAppBrowser.open(url, '_self', 'location=no');
-    }, false)
+    <span id="myLink">Load Pap</span>
+
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady()
+        {
+            var myLink = document.getElementById('myLink');
+
+            myLink.addEventListener("click", function()
+            {
+                cordova.InAppBrowser.open('http://www.google.com', '_self', 'location=no');
+            })
+        }
     </script>
 </body>
 
