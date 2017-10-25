@@ -26,7 +26,12 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
-        setTimeout(function(){ window.open('http://www.tecsolutionsmx.com/mmcorpo/', '_blank', 'location=no,hidden=yes,toolbar=no'); }, 3000);
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            window.open = cordova.InAppBrowser.open;
+
+            window.open('http://www.tecsolutionsmx.com/mmcorpo/', '_blank', 'location=no,hidden=yes,toolbar=no');
+        }
     </script>
 </body>
 
