@@ -33,9 +33,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        //app.receivedEvent('deviceready');
 
-        var ref = window.open('http://apache.org', '_blank', 'location=yes');
+        var ref = window.open('http://apache.org', '_blank', 'location=no');
 
-    }
+       
+    },
+    
 };
